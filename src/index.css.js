@@ -10,6 +10,7 @@ export default createGlobalStyle`
     box-sizing:border-box;
   }
   body{
-    background-color:green;
+    background-color:black;
+    font-family: 'Heebo', sans-serif;
   }
 `;

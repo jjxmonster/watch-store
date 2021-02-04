@@ -6,6 +6,8 @@ import {
    StyledLogoWrapper,
    StyledMenuWrapper,
 } from './Navigation.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import logo from '../../images/logo.jpg';
 
@@ -18,7 +20,9 @@ const Navigation = () => {
          <StyledMenuWrapper>
             <Link to='/'>Home</Link>
             <Link to='/collection'>Collection</Link>
-            <Link to='/shopping-cart'>cart</Link>
+            <Link to='/shopping-cart'>
+               <FontAwesomeIcon className='icon' icon={faShoppingCart} />
+            </Link>
          </StyledMenuWrapper>
       </StyledNavigationWrapper>
    );

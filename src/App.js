@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 import {
    HomePage,
    CollectionPage,
@@ -8,10 +9,11 @@ import {
 } from './components';
 
 import GlobalStyles from './index.css';
+import theme from './themes/theme';
 
 function App() {
    return (
-      <>
+      <ThemeProvider theme={theme}>
          <GlobalStyles />
          <Router>
             <Navgation />
@@ -27,7 +29,7 @@ function App() {
                </Route>
             </Switch>
          </Router>
-      </>
+      </ThemeProvider>
    );
 }
 
