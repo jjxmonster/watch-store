@@ -12,5 +12,12 @@ export default {
       red: {
          normal: '#dc1f18',
       },
+      grey: {
+         light: '#888888',
+         normal: '#505050',
+      },
+      white: {
+         normal: '#F5F5F5',
+      },
    },
 };

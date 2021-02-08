@@ -20,7 +20,7 @@ export const StyledTitleWrapper = styled.div`
    > h1 {
       line-height: 6vw;
       width: 70%;
-      color: white;
+      color: ${({ theme }) => theme.colors.white.normal};
       text-transform: uppercase;
       font-size: 4vw;
       border-bottom: 5px solid ${({ theme }) => theme.colors.red.normal};
@@ -28,7 +28,7 @@ export const StyledTitleWrapper = styled.div`
    > button {
       cursor: pointer;
       background: transparent;
-      color: white;
+      color: ${({ theme }) => theme.colors.white.normal};
       outline: 0;
       border: 1px solid ${({ theme }) => theme.colors.red.normal};
       width: 200px;

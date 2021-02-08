@@ -9,7 +9,6 @@ export const StyledNavigationWrapper = styled.div`
 `;
 
 export const StyledLogoWrapper = styled.div`
-   background: red;
    flex: 1;
    margin-left: 15%;
    > img {
