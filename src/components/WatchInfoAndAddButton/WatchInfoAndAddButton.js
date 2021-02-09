@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { formatCurrency } from '../../themes/index';
+
 import {
    StyledInformationWrapper,
    StyledAmountInput,
@@ -12,9 +14,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 import { products } from '../../products/products';
+import { useSelector } from 'react-redux';
 
-export const WatchInfoAndAddButton = ({ selectedWatchId }) => {
+export const WatchInfoAndAddButton = () => {
    const [amountOfWatches, setAmountOfWatches] = useState(1);
+   const selectedWatchId = useSelector(store => store.watches.selectedWatchId);
 
    const handleDecrementOfAmount = () => {
       if (amountOfWatches === 1) {
@@ -29,10 +33,12 @@ export const WatchInfoAndAddButton = ({ selectedWatchId }) => {
       <>
          <StyledProductName>{item.name}</StyledProductName>
          <StyledProductDesciption>{item.description}</StyledProductDesciption>
-         <StyledProductPrice>${item.price}</StyledProductPrice>
+         <StyledProductPrice>
+            {formatCurrency(item.price * amountOfWatches)}
+         </StyledProductPrice>
       </>
    ));
-   console.log(SelectedWatchInformationComponent);
+
    return (
       <StyledInformationWrapper>
          {SelectedWatchInformationComponent}
@@ -54,13 +60,3 @@ export const WatchInfoAndAddButton = ({ selectedWatchId }) => {
 };
 
 export default WatchInfoAndAddButton;
-
-// <StyledProductName>TISSOT</StyledProductName>
-//          <StyledProductDesciption>
-//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-//             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-//             aliquip ex ea commodo consequat. Duis aute irure dolor in
-//             reprehenderit.
-//          </StyledProductDesciption>
-//          <StyledProductPrice>$2000,00</StyledProductPrice>

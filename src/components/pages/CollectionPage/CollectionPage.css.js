@@ -18,6 +18,7 @@ export const StyledCollectionList = styled.ul`
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      transition: 0.3s ease;
    }
    > li:hover img {
       transform: scale(1.3);
@@ -40,8 +41,14 @@ export const StyledCollectionList = styled.ul`
    }
 
    > .activeProduct {
-      background: ${({ theme }) => theme.colors.grey.normal};
-      width: 120%;
+      opacity: 0.7;
+      > img {
+         transform: scale(1.3);
+      }
+
+      &:hover {
+         border: 0;
+      }
    }
 `;
 
