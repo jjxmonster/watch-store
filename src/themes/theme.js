@@ -13,7 +13,7 @@ export default {
          normal: '#dc1f18',
       },
       grey: {
-         light: '#888888',
+         light: '#BEBEBE',
          normal: '#505050',
       },
       white: {

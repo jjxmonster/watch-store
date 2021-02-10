@@ -61,6 +61,8 @@ export const StyledProductWrapper = styled.div`
 
 export const StyledWatchImages = styled.div`
    flex: 10;
+   overflow: hidden;
+   position: relative;
    background: yellow;
 `;
 

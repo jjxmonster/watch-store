@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setSelectedWatchId } from '../../../data/actions/actions';
 
-import { WatchInfoAndAddButton } from '../../../components';
+import { WatchInfoAndAddButton, Slider } from '../../../components';
 
 import {
    StyledCollectionWrapper,
@@ -49,7 +49,9 @@ const CollectionPage = () => {
             <StyledNumberOfProduct>0{selectedWatchId}/05</StyledNumberOfProduct>
             <WatchInfoAndAddButton />
          </StyledProductWrapper>
-         <StyledWatchImages />
+         <StyledWatchImages>
+            <Slider />
+         </StyledWatchImages>
       </StyledCollectionWrapper>
    );
 };

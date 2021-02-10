@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { formatCurrency } from '../../themes/index';
 
@@ -38,6 +38,10 @@ export const WatchInfoAndAddButton = () => {
          </StyledProductPrice>
       </>
    ));
+
+   useEffect(() => {
+      setAmountOfWatches(1);
+   }, [selectedWatchId]);
 
    return (
       <StyledInformationWrapper>

@@ -18,4 +18,10 @@ export default createGlobalStyle`
     margin:0;
     padding:0;
   }
+  button{
+    cursor:pointer;
+    border:0;
+    background:transparent;
+    outline:none;
+  }
 `;
