@@ -22,7 +22,7 @@ const Slider = () => {
 
    const selectedWatch = products.filter(item => item.id === selectedWatchId);
    const SliderImages = selectedWatch[0].images.map(image => (
-      <img src={image} class='image' alt='slide' key={image} />
+      <img src={image} className='image' alt='slide' key={image} />
    ));
 
    const sliderImagesMove = () => {

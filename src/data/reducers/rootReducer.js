@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 
-import appReducer from './reducer';
+import { commonReducer, shoppingCart } from './reducer';
 
 export const rootReducer = combineReducers({
-   watches: appReducer,
+   watches: commonReducer,
+   shoppingCart: shoppingCart,
 });
