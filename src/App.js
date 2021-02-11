@@ -13,6 +13,11 @@ import {
 import GlobalStyles from './index.css';
 import theme from './themes/theme';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure();
+
 const store = configureStore();
 
 function App() {

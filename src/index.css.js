@@ -10,6 +10,7 @@ export default createGlobalStyle`
     box-sizing:border-box;
   }
   body{
+    overflow-x: hidden; 
     background-color:black;
     font-family: 'Heebo', sans-serif;
   }
@@ -23,5 +24,8 @@ export default createGlobalStyle`
     border:0;
     background:transparent;
     outline:none;
+  }
+  .toastProgressBar{
+    background:${({ theme }) => theme.colors.red.normal};
   }
 `;
