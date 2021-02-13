@@ -12,6 +12,7 @@ import {
 import { formatCurrency } from '../../../themes/index';
 
 import {
+   removeProduct,
    incrementAmountOfProductBeingAlreadyInCart,
    decrementAmountOfProductBeingAlreadyInCart,
 } from '../../../data/actions/actions';
@@ -26,6 +27,7 @@ import {
    StyledEmptyCartWrapper,
    StyledBarOfItemsList,
    StyledAmountInput,
+   StyledDeleteProductButton,
 } from './ShoppingCart.css';
 
 import { products } from '../../../products/products';
@@ -79,6 +81,7 @@ const ShoppingCart = () => {
    const shoppingCartInStore = useSelector(
       store => store.shoppingCart.shoppingCart
    );
+   const shoppingCartDispatch = useDispatch();
 
    const ShoppingCartListElement =
       shoppingCartInStore.length > 0 ? (
@@ -104,6 +107,13 @@ const ShoppingCart = () => {
                      />
                      <span>{formatCurrency(elementPrice)}</span>
                      <span>{formatCurrency(element.totalPrice)}</span>
+                     <StyledDeleteProductButton
+                        onClick={() =>
+                           shoppingCartDispatch(removeProduct(element.id))
+                        }
+                     >
+                        REMOVE
+                     </StyledDeleteProductButton>
                   </div>
                </StyledShoppingListElement>
             );
@@ -136,17 +146,6 @@ const ShoppingCart = () => {
                </div>
             </StyledBarOfItemsList>
             <StyledShoppingItemsList>
-               {/* <StyledShoppingListElement>
-                  <div className='elementLeft'>
-                     <img src={img} />
-                     <h4>TISSOT SEASTAR 1000 POWERMATIC 80</h4>
-                  </div>
-                  <div className='elementRight'>
-                     <AmountInputInCart />
-                     <span>200</span>
-                     <span>500</span>
-                  </div>
-               </StyledShoppingListElement> */}
                {ShoppingCartListElement}
             </StyledShoppingItemsList>
          </StyledShoppingCartItems>

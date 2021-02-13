@@ -1,6 +1,7 @@
 import {
    SET_SELECTED_WATCH_ID,
    ADD_PRODUCT,
+   REMOVE_PRODUCT,
    INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
    DECREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
 } from '../constants';
@@ -22,6 +23,13 @@ export const addProduct = ({ name, price, amount, id }) => {
          totalPrice: price * amount,
          id,
       },
+   };
+};
+
+export const removeProduct = id => {
+   return {
+      type: REMOVE_PRODUCT,
+      payload: { id },
    };
 };
 

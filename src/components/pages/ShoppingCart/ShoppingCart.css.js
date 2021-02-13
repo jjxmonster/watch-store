@@ -86,7 +86,7 @@ export const StyledShoppingListElement = styled.li`
       flex: 5;
       display: flex;
       justify-content: space-between;
-
+      position: relative;
       > span {
          padding-top: 1%;
          padding-right: 1%;
@@ -94,6 +94,18 @@ export const StyledShoppingListElement = styled.li`
          color: ${({ theme }) => theme.colors.white.normal};
       }
    }
+`;
+
+export const StyledDeleteProductButton = styled.button`
+   color: white;
+   width: 20%;
+   height: 20%;
+   font-size: 1.5vh;
+   position: absolute;
+   right: 0;
+   bottom: 10%;
+   margin: auto;
+   border-bottom: solid 1px red;
 `;
 
 export const StyledOredSummaryWrapper = styled.div`
