@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +10,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { formatCurrency } from '../../../themes/index';
+
+import {
+   incrementAmountOfProductBeingAlreadyInCart,
+   decrementAmountOfProductBeingAlreadyInCart,
+} from '../../../data/actions/actions';
 
 import {
    StyledShoppingCartWrapper,
@@ -25,14 +30,45 @@ import {
 
 import { products } from '../../../products/products';
 
-const AmountInputInCart = amount => {
+const AmountInputInCart = ({ amount, price, id }) => {
+   const shoppingCartDispatch = useDispatch();
+
    return (
       <StyledAmountInput>
-         <div className='amountIcon2'>
-            <FontAwesomeIcon icon={faMinus} />
+         <div
+            className='amountIcon2'
+            onClick={
+               amount > 1
+                  ? () =>
+                       shoppingCartDispatch(
+                          decrementAmountOfProductBeingAlreadyInCart({
+                             amount: 1,
+                             price,
+                             id,
+                          })
+                       )
+                  : null
+            }
+         >
+            <FontAwesomeIcon
+               style={amount === 1 ? { opacity: 0.5 } : null}
+               icon={faMinus}
+               id='minusIcon'
+            />
          </div>
-         <div className='amountOfProductInCart'>{amount.amount}</div>
-         <div className='amountIcon2'>
+         <div className='amountOfProductInCart'>{amount}</div>
+         <div
+            className='amountIcon2'
+            onClick={() =>
+               shoppingCartDispatch(
+                  incrementAmountOfProductBeingAlreadyInCart({
+                     amount: 1,
+                     price: price,
+                     id: id,
+                  })
+               )
+            }
+         >
             <FontAwesomeIcon icon={faPlus} />
          </div>
       </StyledAmountInput>
@@ -50,6 +86,9 @@ const ShoppingCart = () => {
             const elementImage = products.filter(
                item => item.id === element.id
             )[0].images[0];
+            const elementPrice = products.filter(
+               item => item.id === element.id
+            )[0].price;
 
             return (
                <StyledShoppingListElement key={element.id}>
@@ -58,11 +97,13 @@ const ShoppingCart = () => {
                      <h4>{element.name}</h4>
                   </div>
                   <div className='elementRight'>
-                     <AmountInputInCart amount={element.amount} />
-                     <span>{formatCurrency(element.price)}</span>
-                     <span>
-                        {formatCurrency(element.price * element.amount)}
-                     </span>
+                     <AmountInputInCart
+                        amount={element.amount}
+                        price={element.price}
+                        id={element.id}
+                     />
+                     <span>{formatCurrency(elementPrice)}</span>
+                     <span>{formatCurrency(element.totalPrice)}</span>
                   </div>
                </StyledShoppingListElement>
             );

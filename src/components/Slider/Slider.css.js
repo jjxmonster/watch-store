@@ -64,6 +64,6 @@ export const StyledPrevSlideButton = styled.button`
              opacity:1;
              &:hover {
                transform: scale(1.1);
-            }
+             }
            `};
 `;

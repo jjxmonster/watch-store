@@ -96,10 +96,10 @@ export const StyledAddProductButton = styled.button`
    grid-column-end: 3;
    grid-row-start: 6;
    grid-row-end: 6;
-   background: #303030;
+   background: ${({ theme }) => theme.colors.red.normal};
    outline: none;
    border: none;
-   color: ${({ theme }) => theme.colors.white.normal};
+   color: ${({ theme }) => theme.colors.grey.light};
    cursor: pointer;
    font-weight: bold;
    font-size: 1.2em;

@@ -69,7 +69,6 @@ export const StyledShoppingListElement = styled.li`
    display: flex;
    padding: 1%;
    margin-bottom: 20px;
-
    > .elementLeft {
       flex: 5;
       display: flex;
@@ -118,6 +117,7 @@ export const StyledAmountInput = styled.div`
       cursor: pointer;
       color: ${({ theme }) => theme.colors.white.normal};
    }
+
    > .amountOfProductInCart {
       border: 1px solid ${({ theme }) => theme.colors.grey.normal};
       color: ${({ theme }) => theme.colors.white.normal};

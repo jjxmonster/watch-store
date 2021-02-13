@@ -63,7 +63,7 @@ export const WatchInfoAndAddButton = () => {
          shoppingCartDispatch(
             addProduct({
                name: selectedWatchObject.name,
-               price: selectedWatchObject.price * amountOfWatches,
+               price: selectedWatchObject.price,
                amount: amountOfWatches,
                id: selectedWatchObject.id,
             })

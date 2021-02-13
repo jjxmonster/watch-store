@@ -1,8 +1,8 @@
-import { act } from 'react-dom/test-utils';
 import {
    SET_SELECTED_WATCH_ID,
    ADD_PRODUCT,
    INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
+   DECREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
 } from '../constants';
 
 const commonState = {
@@ -33,6 +33,7 @@ export const shoppingCart = (state = shoppingCartState, action) => {
             ...state,
             shoppingCart: [...state.shoppingCart, action.payload],
          };
+
       case INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART:
          return {
             ...state,
@@ -40,12 +41,34 @@ export const shoppingCart = (state = shoppingCartState, action) => {
                if (currentProduct.id !== action.payload.id) {
                   return currentProduct;
                }
+
                const { amount, price } = action.payload;
                const newAmount = currentProduct.amount + amount;
+               const newTotalPrice = newAmount * price;
                return {
                   name: currentProduct.name,
-                  price: newAmount * price,
+                  price: price,
                   amount: newAmount,
+                  totalPrice: newTotalPrice,
+                  id: currentProduct.id,
+               };
+            }),
+         };
+      case DECREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART:
+         return {
+            ...state,
+            shoppingCart: state.shoppingCart.map(currentProduct => {
+               if (currentProduct.id !== action.payload.id) {
+                  return currentProduct;
+               }
+               const { amount, price } = action.payload;
+               const newAmount = currentProduct.amount - amount;
+               const newTotalPrice = currentProduct.totalPrice - price;
+               return {
+                  name: currentProduct.name,
+                  price: price,
+                  amount: newAmount,
+                  totalPrice: newTotalPrice,
                   id: currentProduct.id,
                };
             }),

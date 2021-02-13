@@ -47,4 +47,25 @@ export const StyledMenuWrapper = styled.div`
          font-size: 1.5em;
       }
    }
+   > .shoppingCartNav {
+      width: 50px;
+      &:before {
+         border: 0;
+      }
+   }
+`;
+
+export const StyledNumberOfProductsInCart = styled.span`
+   width: 1.5em;
+   height: 1.5em;
+   border-radius: 50%;
+   background: ${({ theme }) => theme.colors.red.normal};
+   color: ${({ theme }) => theme.colors.white.normal};
+   position: absolute;
+   margin: auto;
+   right: 15%;
+   top: 6%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 `;
