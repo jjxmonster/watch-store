@@ -1,13 +1,16 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import {
    StyledLandingWrapper,
    StyledLandingImageWrapper,
    StyledSloganWrapper,
    StyledTitleWrapper,
+   StyledLandingPageButton,
 } from './HomePage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import WatchImage from '../../../images/landing.jpg';
 
 const HomePage = () => {
@@ -16,9 +19,15 @@ const HomePage = () => {
          <StyledSloganWrapper>
             <StyledTitleWrapper>
                <h1>Innovators by Tradition</h1>
-               <button>
-                  SHOP COLLECTION <FontAwesomeIcon icon={faCaretRight} />
-               </button>
+               <Link to='/collection'>
+                  <StyledLandingPageButton>
+                     <span>SHOP COLLECTION</span>
+                     <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className='landingButtonIcon'
+                     />
+                  </StyledLandingPageButton>
+               </Link>
             </StyledTitleWrapper>
          </StyledSloganWrapper>
 

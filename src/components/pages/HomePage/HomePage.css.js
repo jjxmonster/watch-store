@@ -13,6 +13,7 @@ export const StyledSloganWrapper = styled.div`
    justify-content: center;
    align-items: center;
    background: ${({ theme }) => theme.colors.black.light};
+   position: relative;
 `;
 export const StyledTitleWrapper = styled.div`
    width: 80%;
@@ -25,18 +26,44 @@ export const StyledTitleWrapper = styled.div`
       font-size: 4vw;
       border-bottom: 5px solid ${({ theme }) => theme.colors.red.normal};
    }
-   > button {
-      cursor: pointer;
-      background: transparent;
+`;
+
+export const StyledLandingPageButton = styled.a`
+   width: 25vh;
+   height: 5vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: transparent;
+   border: 1px solid ${({ theme }) => theme.colors.red.normal};
+   font-size: 1.7vh;
+   position: relative;
+   cursor: pointer;
+   transition: 0.3s ease;
+   > .landingButtonIcon {
       color: ${({ theme }) => theme.colors.white.normal};
-      outline: 0;
-      border: 1px solid ${({ theme }) => theme.colors.red.normal};
-      width: 200px;
-      height: 40px;
-      transition: 0.2s ease;
-      &:hover {
-         background: ${({ theme }) => theme.colors.red.normal};
-      }
+      position: absolute;
+      right: 20%;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      transition: 0.3s ease;
+      opacity: 0;
+   }
+   > span {
+      color: ${({ theme }) => theme.colors.white.normal};
+      font-weight: 500;
+      transition: 0.3s ease;
+   }
+   &:hover {
+      background: ${({ theme }) => theme.colors.red.normal};
+   }
+   &:hover span {
+      padding-right: 20px;
+   }
+   &:hover .landingButtonIcon {
+      opacity: 1;
+      right: 15%;
    }
 `;
 

@@ -9,6 +9,9 @@ export default createGlobalStyle`
     margin:0;
     box-sizing:border-box;
   }
+  a{
+    text-decoration: none;
+  }
   body{
     overflow-x: hidden; 
     background-color:black;

@@ -21,14 +21,17 @@ export const StyledOrderSummaryHeader = styled.div`
    align-items: flex-end;
    padding-bottom: 7%;
    font-size: 2vh;
-   border-bottom: 2px solid ${({ theme }) => theme.colors.red.normal};
 `;
 
 export const StyledFormWrapper = styled.div`
-   background: green;
    margin-top: 15%;
    width: 80%;
    height: 50%;
+   border-bottom: 2px solid ${({ theme }) => theme.colors.red.normal};
+   border-top: 2px solid ${({ theme }) => theme.colors.red.normal};
+   > form span {
+      color: red;
+   }
 `;
 
 export const StyledBottomWrapper = styled.div`
@@ -53,7 +56,7 @@ export const StyledCheckoutButton = styled.button`
    background: ${({ theme }) => theme.colors.red.normal};
    border: 1px solid ${({ theme }) => theme.colors.red.normal};
    position: relative;
-   //    overflow: hidden;
+   overflow: hidden;
    & span {
       z-index: 2;
       position: relative;
@@ -71,7 +74,6 @@ export const StyledCheckoutButton = styled.button`
       transition: 0.3s ease;
       background: ${({ theme }) => theme.colors.grey.dark};
    }
-
    &:hover:after {
       width: 100%;
    }

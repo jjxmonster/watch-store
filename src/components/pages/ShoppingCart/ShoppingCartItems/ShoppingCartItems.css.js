@@ -14,7 +14,6 @@ export const StyledShoppingCartHeader = styled.div`
    height: 20%;
    top: 0;
    position: absolute;
-
    color: white;
    display: flex;
    justify-content: space-between;

@@ -105,6 +105,6 @@ export const StyledAddProductButton = styled.button`
    font-size: 1.2em;
    transition: 0.2s ease;
    &:hover {
-      opacity: 0.8;
+      color: white;
    }
 `;
