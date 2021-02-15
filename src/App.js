@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import configureStore from './data/store';
+import { saveState } from './data/localStorage';
 import {
    HomePage,
    CollectionPage,
@@ -19,6 +20,10 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 
 const store = configureStore();
+
+store.subscribe(() => {
+   saveState(store.getState());
+});
 
 function App() {
    return (

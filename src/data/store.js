@@ -4,13 +4,16 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import appMiddleware from './middlewares/middlewares';
 
-export default function configureStore(preloadedState) {
+import { loadState } from './localStorage';
+
+export default function configureStore() {
+   const persistedState = loadState();
    const middlewares = [appMiddleware];
    const middlewareEnhancer = applyMiddleware(...middlewares);
 
    const enhancers = [middlewareEnhancer];
    const composedEnhancers = composeWithDevTools(...enhancers);
-   const store = createStore(rootReducer, preloadedState, composedEnhancers);
+   const store = createStore(rootReducer, persistedState, composedEnhancers);
 
    return store;
 }

@@ -38,11 +38,9 @@ export const shoppingCart = (state = shoppingCartState, action) => {
       case REMOVE_PRODUCT:
          return {
             ...state,
-            shoppingCart: state.shoppingCart.filter(currentProduct => {
-               if (currentProduct.id !== action.payload.id) {
-                  return currentProduct;
-               }
-            }),
+            shoppingCart: state.shoppingCart.filter(
+               currentProduct => currentProduct.id !== action.payload.id
+            ),
          };
 
       case INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART:

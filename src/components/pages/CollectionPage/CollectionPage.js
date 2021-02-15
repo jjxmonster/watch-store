@@ -27,7 +27,7 @@ const CollectionPage = () => {
                key={item.id}
                onClick={() => reduxDispatch(setSelectedWatchId(id + 1))}
             >
-               <img src={item.images[0]} />
+               <img src={item.images[0]} alt={item.name} />
             </li>
          );
       } else {
@@ -36,7 +36,7 @@ const CollectionPage = () => {
                key={item.id}
                onClick={() => reduxDispatch(setSelectedWatchId(id + 1))}
             >
-               <img src={item.images[0]} />
+               <img src={item.images[0]} alt={item.name} />
             </li>
          );
       }

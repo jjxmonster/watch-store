@@ -15,6 +15,7 @@ export default {
       grey: {
          light: '#BEBEBE',
          normal: '#505050',
+         dark: '#181818',
       },
       white: {
          normal: '#F5F5F5',

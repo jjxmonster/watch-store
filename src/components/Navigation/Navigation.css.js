@@ -47,6 +47,11 @@ export const StyledMenuWrapper = styled.div`
          font-size: 1.5em;
       }
    }
+   > .active {
+      :before {
+         width: 100%;
+      }
+   }
    > .shoppingCartNav {
       width: 50px;
       &:before {
