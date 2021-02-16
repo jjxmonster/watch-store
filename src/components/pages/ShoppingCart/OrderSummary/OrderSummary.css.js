@@ -29,8 +29,13 @@ export const StyledFormWrapper = styled.div`
    height: 50%;
    border-bottom: 2px solid ${({ theme }) => theme.colors.red.normal};
    border-top: 2px solid ${({ theme }) => theme.colors.red.normal};
-   > form span {
-      color: red;
+   display: flex;
+   align-items: flex-end;
+   > form {
+      width: 100%;
+      height: 86%;
+      display: flex;
+      flex-direction: column;
    }
 `;
 

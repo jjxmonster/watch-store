@@ -15,6 +15,8 @@ import {
    StyledCheckoutButton,
 } from './OrderSummary.css';
 
+import InputComponent from './InputComponent';
+
 const OrderForm = () => {
    return (
       <Form
@@ -40,44 +42,29 @@ const OrderForm = () => {
             <form onSubmit={handleSubmit}>
                <Field name='name'>
                   {({ input, meta }) => (
-                     <div>
-                        <input
-                           {...input}
-                           type='text'
-                           placeholder='Enter your name'
-                        />
-                        {meta.error && meta.touched && (
-                           <span>{meta.error}</span>
-                        )}
-                     </div>
+                     <InputComponent
+                        input={input}
+                        meta={meta}
+                        placeholder='Enter your name'
+                     />
                   )}
                </Field>
                <Field name='email'>
                   {({ input, meta }) => (
-                     <div>
-                        <input
-                           {...input}
-                           type='text'
-                           placeholder='Enter your email address'
-                        />
-                        {meta.error && meta.touched && (
-                           <span>{meta.error}</span>
-                        )}
-                     </div>
+                     <InputComponent
+                        input={input}
+                        meta={meta}
+                        placeholder='Enter your email address'
+                     />
                   )}
                </Field>
                <Field name='address'>
                   {({ input, meta }) => (
-                     <div>
-                        <input
-                           {...input}
-                           type='text'
-                           placeholder='Enter your address'
-                        />
-                        {meta.error && meta.touched && (
-                           <span>{meta.error}</span>
-                        )}
-                     </div>
+                     <InputComponent
+                        input={input}
+                        meta={meta}
+                        placeholder='Enter your address'
+                     />
                   )}
                </Field>
             </form>

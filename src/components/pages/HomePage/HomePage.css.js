@@ -28,7 +28,7 @@ export const StyledTitleWrapper = styled.div`
    }
 `;
 
-export const StyledLandingPageButton = styled.a`
+export const StyledLandingPageButton = styled.span`
    width: 25vh;
    height: 5vh;
    display: flex;
