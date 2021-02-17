@@ -7,10 +7,12 @@ import { StyledShoppingCartWrapper } from './ShoppingCart.css';
 
 const ShoppingCart = () => {
    return (
-      <StyledShoppingCartWrapper>
-         <ShoppingCartItems />
-         <OrderSummary />
-      </StyledShoppingCartWrapper>
+      <>
+         <StyledShoppingCartWrapper>
+            <ShoppingCartItems />
+            <OrderSummary />
+         </StyledShoppingCartWrapper>
+      </>
    );
 };
 

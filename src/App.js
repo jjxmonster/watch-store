@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import configureStore from './data/store';
 import { saveState } from './data/localStorage';
@@ -26,26 +27,29 @@ store.subscribe(() => {
 });
 
 function App() {
+   const client = new QueryClient();
    return (
-      <Provider store={store}>
-         <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <Router>
-               <Navgation />
-               <Switch>
-                  <Route path='/collection'>
-                     <CollectionPage />
-                  </Route>
-                  <Route path='/shopping-cart'>
-                     <ShoppingCart />
-                  </Route>
-                  <Route path='/' exact>
-                     <HomePage />
-                  </Route>
-               </Switch>
-            </Router>
-         </ThemeProvider>
-      </Provider>
+      <QueryClientProvider client={client}>
+         <Provider store={store}>
+            <ThemeProvider theme={theme}>
+               <GlobalStyles />
+               <Router>
+                  <Navgation />
+                  <Switch>
+                     <Route path='/collection'>
+                        <CollectionPage />
+                     </Route>
+                     <Route path='/shopping-cart'>
+                        <ShoppingCart />
+                     </Route>
+                     <Route path='/' exact>
+                        <HomePage />
+                     </Route>
+                  </Switch>
+               </Router>
+            </ThemeProvider>
+         </Provider>
+      </QueryClientProvider>
    );
 }
 

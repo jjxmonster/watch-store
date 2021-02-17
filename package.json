@@ -1,52 +1,54 @@
 {
-  "name": "shop",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.34",
-    "@fortawesome/free-solid-svg-icons": "^5.15.2",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
-    "final-form": "^4.20.1",
-    "lodash": "^4.17.20",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-final-form": "^6.5.2",
-    "react-redux": "^7.2.2",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "react-toastify": "^7.0.3",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
-    "styled-components": "^5.2.1",
-    "styled-normalize": "^8.0.7",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+   "name": "shop",
+   "version": "0.1.0",
+   "private": true,
+   "dependencies": {
+      "@fortawesome/fontawesome-svg-core": "^1.2.34",
+      "@fortawesome/free-solid-svg-icons": "^5.15.2",
+      "@fortawesome/react-fontawesome": "^0.1.14",
+      "@testing-library/jest-dom": "^5.11.9",
+      "@testing-library/react": "^11.2.5",
+      "@testing-library/user-event": "^12.6.3",
+      "final-form": "^4.20.1",
+      "lodash": "^4.17.20",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1",
+      "react-final-form": "^6.5.2",
+      "react-query": "^3.9.8",
+      "react-redux": "^7.2.2",
+      "react-router": "^5.2.0",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "4.0.1",
+      "react-toastify": "^7.0.3",
+      "redux": "^4.0.5",
+      "redux-devtools-extension": "^2.13.8",
+      "styled-components": "^5.2.1",
+      "styled-normalize": "^8.0.7",
+      "web-vitals": "^0.2.4"
+   },
+   "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "start:db": "json-server --watch db.json --port 3001"
+   },
+   "eslintConfig": {
+      "extends": [
+         "react-app",
+         "react-app/jest"
+      ]
+   },
+   "browserslist": {
+      "production": [
+         ">0.2%",
+         "not dead",
+         "not op_mini all"
+      ],
+      "development": [
+         "last 1 chrome version",
+         "last 1 firefox version",
+         "last 1 safari version"
+      ]
+   }
 }

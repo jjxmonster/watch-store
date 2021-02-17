@@ -4,6 +4,7 @@ import {
    REMOVE_PRODUCT,
    INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
    DECREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
+   REMOVE_ALL_PRODUCTS,
 } from '../constants';
 
 const commonState = {
@@ -41,6 +42,12 @@ export const shoppingCart = (state = shoppingCartState, action) => {
             shoppingCart: state.shoppingCart.filter(
                currentProduct => currentProduct.id !== action.payload.id
             ),
+         };
+
+      case REMOVE_ALL_PRODUCTS:
+         return {
+            ...state,
+            shoppingCart: [],
          };
 
       case INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART:

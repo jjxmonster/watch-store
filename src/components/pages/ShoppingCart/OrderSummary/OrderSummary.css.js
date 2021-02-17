@@ -29,14 +29,24 @@ export const StyledFormWrapper = styled.div`
    height: 50%;
    border-bottom: 2px solid ${({ theme }) => theme.colors.red.normal};
    border-top: 2px solid ${({ theme }) => theme.colors.red.normal};
+   ${({ empty }) =>
+      empty
+         ? `align-items:center;
+            justify-content:center;`
+         : `align-items: flex-end;`}
+
    display: flex;
-   align-items: flex-end;
    > form {
       width: 100%;
       height: 86%;
       display: flex;
       flex-direction: column;
    }
+`;
+
+export const StyledEmptyShoppingCartMessage = styled.h2`
+   color: white;
+   font-size: 2.5vh;
 `;
 
 export const StyledBottomWrapper = styled.div`
@@ -79,7 +89,13 @@ export const StyledCheckoutButton = styled.button`
       transition: 0.3s ease;
       background: ${({ theme }) => theme.colors.grey.dark};
    }
-   &:hover:after {
-      width: 100%;
-   }
+
+   ${({ disabled }) =>
+      disabled
+         ? `opacity:0.5`
+         : `opacity:1;  
+            &:hover:after {
+               width: 100%;
+            }
+         `}
 `;

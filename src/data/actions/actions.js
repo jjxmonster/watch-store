@@ -4,6 +4,7 @@ import {
    REMOVE_PRODUCT,
    INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
    DECREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
+   REMOVE_ALL_PRODUCTS,
 } from '../constants';
 
 export const setSelectedWatchId = id => {
@@ -61,4 +62,8 @@ export const decrementAmountOfProductBeingAlreadyInCart = ({
          id,
       },
    };
+};
+
+export const removeAllProductsFromShoppingCart = () => {
+   return { type: REMOVE_ALL_PRODUCTS, payload: {} };
 };
