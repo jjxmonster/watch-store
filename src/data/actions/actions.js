@@ -5,6 +5,7 @@ import {
    INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
    DECREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
    REMOVE_ALL_PRODUCTS,
+   ADD_ORDER,
 } from '../constants';
 
 export const setSelectedWatchId = id => {
@@ -62,6 +63,10 @@ export const decrementAmountOfProductBeingAlreadyInCart = ({
          id,
       },
    };
+};
+
+export const addOrderToReduxStore = data => {
+   return { type: ADD_ORDER, payload: data };
 };
 
 export const removeAllProductsFromShoppingCart = () => {

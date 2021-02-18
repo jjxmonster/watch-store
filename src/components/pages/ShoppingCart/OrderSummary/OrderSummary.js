@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import OrderForm from './OrderForm';
@@ -23,6 +24,8 @@ const OrderSummary = () => {
    const shoppingCartInStore = useSelector(
       store => store.shoppingCart.shoppingCart
    );
+   const { push } = useHistory();
+
    const totalCost = sumBy(shoppingCartInStore, 'totalPrice');
 
    const isShoppingCartEmpty = shoppingCartInStore.length > 0 ? false : true;
@@ -54,12 +57,13 @@ const OrderSummary = () => {
                   type='submit'
                   disabled={isShoppingCartEmpty ? true : false}
                   form='clientForm'
+                  onClick={() => push('/shopping-cart/order')}
                >
                   <span>CHECKOUT</span>
                </StyledCheckoutButton>
             </StyledBottomWrapper>
          </StyledOredSummaryWrapper>
-         <Route path='/shopping-cart/modal'>
+         <Route path='/shopping-cart/order'>
             <OrderModal />
          </Route>
       </>

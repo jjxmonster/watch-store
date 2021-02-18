@@ -5,19 +5,35 @@ import { Form, Field } from 'react-final-form';
 
 import { addOrder } from '../../../../../data/fetch/order.fetch';
 import InputComponent from './InputComponent';
-import { removeAllProductsFromShoppingCart } from '../../../../../data/actions/actions.js';
+import {
+   removeAllProductsFromShoppingCart,
+   addOrderToReduxStore,
+} from '../../../../../data/actions/actions.js';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const OrderForm = ({ order, totalCost }) => {
    const { mutate } = useMutation(addOrder, {
-      onSuccess: () => dispatch(removeAllProductsFromShoppingCart()),
+      onSuccess: data => {
+         dispatch(addOrderToReduxStore(data));
+         dispatch(removeAllProductsFromShoppingCart());
+      },
    });
    const dispatch = useDispatch();
+
+   const getOrderDate = () => {
+      const date = new Date();
+      const orderTime = `${date.getDate()}/${
+         date.getMonth() + 1
+      }/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
+      return orderTime;
+   };
 
    const onSubmit = async values => {
       await sleep(100);
       values.order = order;
-      values.totalPrice = totalCost;
+      values.totalCost = totalCost;
+      values.date = getOrderDate();
       const data = values;
       addTransaction(data);
    };

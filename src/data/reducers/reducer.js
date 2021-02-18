@@ -5,6 +5,7 @@ import {
    INCREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
    DECREMENT_AMOUNT_OF_PRODUCT_ALREADY_IN_CART,
    REMOVE_ALL_PRODUCTS,
+   ADD_ORDER,
 } from '../constants';
 
 const commonState = {
@@ -13,6 +14,10 @@ const commonState = {
 
 const shoppingCartState = {
    shoppingCart: [],
+};
+
+const orderInStore = {
+   orderInStore: undefined,
 };
 
 export const commonReducer = (state = commonState, action) => {
@@ -89,6 +94,19 @@ export const shoppingCart = (state = shoppingCartState, action) => {
                };
             }),
          };
+      default:
+         return state;
+   }
+};
+
+export const orderReducer = (state = orderInStore, action) => {
+   switch (action.type) {
+      case ADD_ORDER:
+         return {
+            ...state,
+            orderInStore: action.payload,
+         };
+
       default:
          return state;
    }

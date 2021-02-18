@@ -8,3 +8,8 @@ export const addOrder = async data => {
    });
    return await response.json();
 };
+
+export const fetchAllOrders = async () => {
+   const response = await fetch('http://localhost:3001/orders');
+   return await response.json();
+};
