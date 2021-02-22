@@ -2,6 +2,7 @@ import React from 'react';
 import { useMutation } from 'react-query';
 import { useDispatch } from 'react-redux';
 import { Form, Field } from 'react-final-form';
+import { useHistory } from 'react-router';
 
 import { addOrder } from '../../../../../data/fetch/order.fetch';
 import InputComponent from './InputComponent';
@@ -11,7 +12,9 @@ import {
 } from '../../../../../data/actions/actions.js';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 const OrderForm = ({ order, totalCost }) => {
+   const { push } = useHistory();
    const { mutate } = useMutation(addOrder, {
       onSuccess: data => {
          dispatch(addOrderToReduxStore(data));
@@ -36,6 +39,7 @@ const OrderForm = ({ order, totalCost }) => {
       values.date = getOrderDate();
       const data = values;
       addTransaction(data);
+      push('/shopping-cart/order');
    };
 
    const addTransaction = data => {

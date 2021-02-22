@@ -57,7 +57,6 @@ const OrderSummary = () => {
                   type='submit'
                   disabled={isShoppingCartEmpty ? true : false}
                   form='clientForm'
-                  onClick={() => push('/shopping-cart/order')}
                >
                   <span>CHECKOUT</span>
                </StyledCheckoutButton>
