@@ -19,6 +19,7 @@ const OrderForm = ({ order, totalCost }) => {
       onSuccess: data => {
          dispatch(addOrderToReduxStore(data));
          dispatch(removeAllProductsFromShoppingCart());
+         push('/shopping-cart/order');
       },
    });
    const dispatch = useDispatch();
@@ -39,7 +40,6 @@ const OrderForm = ({ order, totalCost }) => {
       values.date = getOrderDate();
       const data = values;
       addTransaction(data);
-      push('/shopping-cart/order');
    };
 
    const addTransaction = data => {

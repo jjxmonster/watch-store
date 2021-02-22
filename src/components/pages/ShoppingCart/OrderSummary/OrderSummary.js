@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route } from 'react-router-dom';
-import { Link, useHistory } from 'react-router-dom';
+
 import { useSelector } from 'react-redux';
 
 import OrderForm from './OrderForm';
@@ -24,7 +24,6 @@ const OrderSummary = () => {
    const shoppingCartInStore = useSelector(
       store => store.shoppingCart.shoppingCart
    );
-   const { push } = useHistory();
 
    const totalCost = sumBy(shoppingCartInStore, 'totalPrice');
 
@@ -63,7 +62,9 @@ const OrderSummary = () => {
             </StyledBottomWrapper>
          </StyledOredSummaryWrapper>
          <Route path='/shopping-cart/order'>
-            <OrderModal />
+            <Suspense fallback='LOADING...'>
+               <OrderModal />
+            </Suspense>
          </Route>
       </>
    );
