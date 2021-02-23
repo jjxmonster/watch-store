@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
@@ -10,6 +10,7 @@ import {
    CollectionPage,
    ShoppingCart,
    Navgation,
+   LoadingIndicator,
 } from './components';
 
 import GlobalStyles from './index.css';
@@ -17,7 +18,7 @@ import theme from './themes/theme';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+const OrdersPage = React.lazy(() => import('./components/pages/OrdersPage'));
 toast.configure();
 
 const store = configureStore();
@@ -27,13 +28,20 @@ store.subscribe(() => {
 });
 
 function App() {
-   const client = new QueryClient();
+   const client = new QueryClient({
+      defaultOptions: {
+         queries: {
+            suspense: true,
+         },
+      },
+   });
    return (
       <QueryClientProvider client={client}>
          <Provider store={store}>
             <ThemeProvider theme={theme}>
                <GlobalStyles />
                <Router>
+                  <Link to='/orders'>LINK KURWA</Link>
                   <Navgation />
                   <Switch>
                      <Route path='/collection'>
@@ -41,6 +49,11 @@ function App() {
                      </Route>
                      <Route path='/shopping-cart'>
                         <ShoppingCart />
+                     </Route>
+                     <Route path='/orders'>
+                        <React.Suspense fallback={<LoadingIndicator />}>
+                           <OrdersPage />
+                        </React.Suspense>
                      </Route>
                      <Route path='/' exact>
                         <HomePage />

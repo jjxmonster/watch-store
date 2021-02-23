@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
@@ -62,9 +62,7 @@ const OrderSummary = () => {
             </StyledBottomWrapper>
          </StyledOredSummaryWrapper>
          <Route path='/shopping-cart/order'>
-            <Suspense fallback='LOADING...'>
-               <OrderModal />
-            </Suspense>
+            <OrderModal />
          </Route>
       </>
    );

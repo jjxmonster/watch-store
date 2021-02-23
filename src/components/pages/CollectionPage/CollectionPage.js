@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setSelectedWatchId } from '../../../data/actions/actions';
 
-import { WatchInfoAndAddButton, Slider } from '../../../components';
+import {
+   WatchInfoAndAddButton,
+   Slider,
+   LoadingIndicator,
+} from '../../../components';
 
 import {
    StyledCollectionWrapper,

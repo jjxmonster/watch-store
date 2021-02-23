@@ -53,6 +53,14 @@ const OrderModal = () => {
                   <span>Cost:</span>
                   <span>{formatCurrency(order.totalCost)}</span>
                </li>
+               <li>
+                  <span>Items:</span>
+                  <span>
+                     {order.order.map(item => (
+                        <p>{`${item.amount}x ${item.name}`}</p>
+                     ))}
+                  </span>
+               </li>
             </StyledOrderInformationList>
          </StyledOrderModal>
       </StyledModalWrapper>,

@@ -11,5 +11,7 @@ export const addOrder = async data => {
 
 export const fetchAllOrders = async () => {
    const response = await fetch('http://localhost:3001/orders');
-   return await response.json();
+   const data = await response.json();
+
+   return data;
 };
