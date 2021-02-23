@@ -1,5 +1,6 @@
 {
   "orders": [
+<<<<<<< HEAD
     {
       "name": "john rambo",
       "email": "rambo@example.com",
@@ -24,5 +25,8 @@
       "date": "23/2/2021 13:7:6",
       "id": 1
     }
+=======
+
+>>>>>>> 3a81facd5e958965cb89a7d07851abdacf53088b
   ]
 }
