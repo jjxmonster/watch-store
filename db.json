@@ -1,32 +1,28 @@
 {
-  "orders": [
-<<<<<<< HEAD
-    {
-      "name": "john rambo",
-      "email": "rambo@example.com",
-      "address": "LA, 253C",
-      "order": [
-        {
-          "name": "TISSOT GENTLEMAN",
-          "price": 525,
-          "amount": 3,
-          "totalPrice": 1575,
-          "id": 2
-        },
-        {
-          "name": "TISSOT LE LOCLE POWERMATIC 80",
-          "price": 580,
-          "amount": 1,
-          "totalPrice": 580,
-          "id": 4
-        }
-      ],
-      "totalCost": 2155,
-      "date": "23/2/2021 13:7:6",
-      "id": 1
-    }
-=======
-
->>>>>>> 3a81facd5e958965cb89a7d07851abdacf53088b
-  ]
+   "orders": [
+      {
+         "name": "john rambo",
+         "email": "rambo@example.com",
+         "address": "LA, 253C",
+         "order": [
+            {
+               "name": "TISSOT GENTLEMAN",
+               "price": 525,
+               "amount": 3,
+               "totalPrice": 1575,
+               "id": 2
+            },
+            {
+               "name": "TISSOT LE LOCLE POWERMATIC 80",
+               "price": 580,
+               "amount": 1,
+               "totalPrice": 580,
+               "id": 4
+            }
+         ],
+         "totalCost": 2155,
+         "date": "23/2/2021 13:7:6",
+         "id": 1
+      }
+   ]
 }
