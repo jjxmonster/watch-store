@@ -6,3 +6,4 @@ export { default as Navgation } from './Navigation';
 export { default as WatchInfoAndAddButton } from './WatchInfoAndAddButton';
 export { default as Slider } from './Slider';
 export { default as LoadingIndicator } from './LoadingIndicator';
+export { default as ToOrdersButton } from './ToOrdersButton';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
@@ -11,6 +11,7 @@ import {
    ShoppingCart,
    Navgation,
    LoadingIndicator,
+   ToOrdersButton,
 } from './components';
 
 import GlobalStyles from './index.css';
@@ -41,7 +42,7 @@ function App() {
             <ThemeProvider theme={theme}>
                <GlobalStyles />
                <Router>
-                  <Link to='/orders'>LINK KURWA</Link>
+                  <ToOrdersButton />
                   <Navgation />
                   <Switch>
                      <Route path='/collection'>
