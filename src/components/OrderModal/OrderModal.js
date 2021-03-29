@@ -19,7 +19,6 @@ const OrderModal = () => {
    const handleClose = () => {
       history.goBack();
    };
-   console.log(order);
 
    return createPortal(
       <StyledModalWrapper style={{ color: 'white' }} onClick={handleClose}>

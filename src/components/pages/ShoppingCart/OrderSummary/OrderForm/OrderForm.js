@@ -43,6 +43,7 @@ const OrderForm = ({ order, totalCost }) => {
    };
 
    const addTransaction = data => {
+      console.log(data + 'dodawanie');
       mutate(data);
    };
 
