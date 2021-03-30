@@ -22,22 +22,5 @@
       "totalCost": 2155,
       "date": "23/2/2021 13:7:6",
       "id": 1
-   },
-   {
-      "name": "Jakub Tarabasz",
-      "email": "kuba.tarabasz@wp.pl",
-      "address": "Miròw Stary",
-      "order": [
-         {
-            "name": "TISSOT LE LOCLE POWERMATIC 80",
-            "price": 580,
-            "amount": 1,
-            "totalPrice": 580,
-            "id": 4
-         }
-      ],
-      "totalCost": 580,
-      "date": "30/3/2021 17:47:58",
-      "id": 2
    }
 ]

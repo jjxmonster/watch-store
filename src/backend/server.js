@@ -40,7 +40,7 @@ app.post('/orders', cacheControl, (req, res) => {
             (err, data) => {
                if (err) res.end();
                else {
-                  res.end();
+                  res.end(200);
                }
             }
          );
