@@ -17,6 +17,7 @@ const OrderForm = ({ order, totalCost }) => {
    const { push } = useHistory();
    const { mutate } = useMutation(addOrder, {
       onSuccess: data => {
+         console.log('SUKCES');
          dispatch(addOrderToReduxStore(data));
          dispatch(removeAllProductsFromShoppingCart());
          push('/shopping-cart/order');

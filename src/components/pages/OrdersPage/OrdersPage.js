@@ -28,14 +28,16 @@ const OrdersPage = () => {
             </StyledOrdersTableHead>
             <StyledOrdersTableBody>
                {orders.map(order => (
-                  <tr>
+                  <tr key={order.id}>
                      <td>{order.id}</td>
                      <td>{order.date}</td>
                      <td>{formatCurrency(order.totalCost)}</td>
                      <td>{order.name}</td>
                      <td>
                         {order.order.map(item => (
-                           <p>{`${item.amount}x ${item.name}`}</p>
+                           <p
+                              key={item.name}
+                           >{`${item.amount}x ${item.name}`}</p>
                         ))}
                      </td>
                   </tr>

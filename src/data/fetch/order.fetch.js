@@ -1,17 +1,21 @@
 export const addOrder = async data => {
    const response = await fetch('http://localhost:3001/orders', {
+      mode: 'no-cors',
       method: 'POST',
       headers: {
          'Content-type': 'application/json',
       },
       body: JSON.stringify(data),
    });
+
    return await response.json();
 };
 
 export const fetchAllOrders = async () => {
-   const response = await fetch('http://localhost:3001/orders');
-   const data = await response.json();
+   const response = await fetch('http://localhost:3001/orders').catch(err => {
+      console.log('ERROR');
+   });
 
-   return data;
+   const data = await response.json();
+   return data.orders;
 };
