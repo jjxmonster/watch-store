@@ -42,7 +42,7 @@ const OrderSummary = () => {
                   </StyledEmptyShoppingCartMessage>
                ) : (
                   <OrderForm
-                     order={shoppingCartInStore}
+                     items={shoppingCartInStore}
                      totalCost={totalCost}
                   />
                )}

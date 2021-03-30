@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const { cacheControl } = require('./cacheControl');
+const { response } = require('express');
 
 const port = process.env.PORT || 3001;
 
@@ -25,8 +26,7 @@ app.post('/orders', cacheControl, (req, res) => {
    fs.readFile(path.join(__dirname, 'db.json'), 'utf-8', (err, data) => {
       if (err) res.end();
       else {
-         const orders = JSON.parse(data).orders;
-
+         const orders = JSON.parse(data);
          const newOrder = (req.body = {
             ...req.body,
             id: orders.length + 1,
@@ -40,7 +40,7 @@ app.post('/orders', cacheControl, (req, res) => {
             (err, data) => {
                if (err) res.end();
                else {
-                  res.end(200);
+                  res.status(200).json(newOrder);
                }
             }
          );

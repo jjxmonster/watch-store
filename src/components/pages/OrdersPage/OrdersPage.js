@@ -34,7 +34,7 @@ const OrdersPage = () => {
                      <td>{formatCurrency(order.totalCost)}</td>
                      <td>{order.name}</td>
                      <td>
-                        {order.order.map(item => (
+                        {order.items.map(item => (
                            <p
                               key={item.name}
                            >{`${item.amount}x ${item.name}`}</p>

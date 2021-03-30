@@ -16,5 +16,5 @@ export const fetchAllOrders = async () => {
    });
 
    const data = await response.json();
-   return data.orders;
+   return data;
 };

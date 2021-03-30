@@ -13,11 +13,10 @@ import {
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-const OrderForm = ({ order, totalCost }) => {
+const OrderForm = ({ items, totalCost }) => {
    const { push } = useHistory();
    const { mutate } = useMutation(addOrder, {
       onSuccess: data => {
-         console.log('SUKCES');
          dispatch(addOrderToReduxStore(data));
          dispatch(removeAllProductsFromShoppingCart());
          push('/shopping-cart/order');
@@ -38,7 +37,7 @@ const OrderForm = ({ order, totalCost }) => {
       await sleep(100);
       const data = {
          ...values,
-         order,
+         items,
          totalCost,
          date: getOrderDate(),
       };

@@ -3,7 +3,7 @@
       "name": "john rambo",
       "email": "rambo@example.com",
       "address": "LA, 253C",
-      "order": [
+      "items": [
          {
             "name": "TISSOT GENTLEMAN",
             "price": 525,

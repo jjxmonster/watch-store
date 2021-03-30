@@ -55,7 +55,7 @@ const OrderModal = () => {
                <li>
                   <span>Items:</span>
                   <span>
-                     {order.order.map(item => (
+                     {order.items.map(item => (
                         <p>{`${item.amount}x ${item.name}`}</p>
                      ))}
                   </span>
