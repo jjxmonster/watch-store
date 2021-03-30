@@ -36,15 +36,16 @@ const OrderForm = ({ order, totalCost }) => {
 
    const onSubmit = async values => {
       await sleep(100);
-      values.order = order;
-      values.totalCost = totalCost;
-      values.date = getOrderDate();
-      const data = values;
+      const data = {
+         ...values,
+         order,
+         totalCost,
+         date: getOrderDate(),
+      };
       addTransaction(data);
    };
 
    const addTransaction = data => {
-      console.log(data + 'dodawanie');
       mutate(data);
    };
 

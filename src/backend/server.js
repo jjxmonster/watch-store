@@ -18,11 +18,32 @@ app.listen(port, '127.0.0.1', () => {
 
 app.get('/orders', cacheControl, (req, res) => {
    res.set('Content-Type', 'text/json');
-
    res.sendFile(path.join(__dirname, 'db.json'));
 });
 
 app.post('/orders', cacheControl, (req, res) => {
-   console.log(req.body);
-   res.send();
+   fs.readFile(path.join(__dirname, 'db.json'), 'utf-8', (err, data) => {
+      if (err) res.end();
+      else {
+         const orders = JSON.parse(data).orders;
+
+         const newOrder = (req.body = {
+            ...req.body,
+            id: orders.length + 1,
+         });
+
+         const newOrdersList = [...orders, newOrder];
+
+         fs.writeFile(
+            path.join(__dirname, 'db.json'),
+            JSON.stringify(newOrdersList),
+            (err, data) => {
+               if (err) res.end();
+               else {
+                  res.end();
+               }
+            }
+         );
+      }
+   });
 });
