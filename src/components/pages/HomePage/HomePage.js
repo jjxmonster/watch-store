@@ -25,7 +25,7 @@ const HomePage = () => {
          <StyledLandingWrapper>
             <StyledSloganWrapper>
                <StyledTitleWrapper>
-                  <h1>Innovators by Tradition</h1>
+                  <h1>Innovators by Tradition.</h1>
                   <Link to='/collection'>
                      <StyledLandingPageButton>
                         <span>SHOP COLLECTION</span>
