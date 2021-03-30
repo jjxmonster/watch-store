@@ -4,9 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const { cacheControl } = require('./cacheControl');
-const { response } = require('express');
 
-const port = process.env.PORT || 3001;
+const port = 3001;
 
 const app = express();
 
