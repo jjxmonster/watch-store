@@ -21,6 +21,13 @@ export const StyledShoppingCartHeader = styled.div`
    padding-bottom: 3%;
    font-size: 2.5vh;
    border-bottom: 2px solid ${({ theme }) => theme.colors.red.normal};
+   @media (max-width: 750px) {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 2vh;
+      height: 10%;
+   }
 `;
 
 export const StyledBarOfItemsList = styled.div`
@@ -31,6 +38,9 @@ export const StyledBarOfItemsList = styled.div`
    font-weight: 500;
    color: ${({ theme }) => theme.colors.grey.light};
    display: flex;
+   @media (max-width: 750px) {
+      display: none;
+   }
    > div {
       flex: 1;
    }
@@ -51,6 +61,11 @@ export const StyledShoppingItemsList = styled.ul`
    width: 80%;
    position: absolute;
    top: 30%;
+   @media (max-width: 750px) {
+      width: 100%;
+      top: 15%;
+      padding: 0 10px;
+   }
 `;
 
 export const StyledShoppingListElement = styled.li`
@@ -60,12 +75,21 @@ export const StyledShoppingListElement = styled.li`
    display: flex;
    padding: 1%;
    margin-bottom: 20px;
+
+   @media (max-width: 750px) {
+      position: relative;
+      height: 15vh;
+   }
    > .elementLeft {
       flex: 5;
       display: flex;
+
       > img {
          width: 170px;
          height: 100%;
+         @media (max-width: 750px) {
+            width: 130px;
+         }
       }
       > h4 {
          color: ${({ theme }) => theme.colors.white.normal};
@@ -78,11 +102,27 @@ export const StyledShoppingListElement = styled.li`
       display: flex;
       justify-content: space-between;
       position: relative;
+      @media (max-width: 750px) {
+         flex-direction: column;
+         position: static;
+      }
+
       > span {
          padding-top: 1%;
          padding-right: 1%;
          font-size: 3vh;
          color: ${({ theme }) => theme.colors.white.normal};
+
+         @media (max-width: 750px) {
+            font-size: 2.5vh;
+            position: absolute;
+            right: 0;
+         }
+      }
+      > span:nth-child(even) {
+         @media (max-width: 750px) {
+            display: none;
+         }
       }
    }
 `;
@@ -106,8 +146,15 @@ export const StyledDeleteProductButton = styled.button`
 export const StyledAmountInput = styled.div`
    width: 25%;
    height: 30%;
-
    display: flex;
+   @media (max-width: 750px) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+   }
+
    > div {
       flex: 1;
       display: flex;

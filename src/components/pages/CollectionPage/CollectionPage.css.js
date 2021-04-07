@@ -5,13 +5,21 @@ export const StyledCollectionWrapper = styled.div`
    height: 85vh;
    display: flex;
    flex-direction: row;
-   background: ${({ theme }) => theme.colors.black.light}; ;
+   background: ${({ theme }) => theme.colors.black.light};
+   @media (max-width: 750px) {
+      flex-direction: column;
+   }
 `;
 
 export const StyledCollectionList = styled.ul`
    flex: 2;
    display: flex;
    flex-direction: column;
+
+   @media (max-width: 750px) {
+      flex: 5;
+      flex-direction: row;
+   }
 
    > li {
       flex: 1;
@@ -57,6 +65,9 @@ export const StyledProductWrapper = styled.div`
    display: flex;
    justify-content: center;
    align-items: center;
+   @media (max-width: 750px) {
+      flex: 6;
+   }
 `;
 
 export const StyledWatchImages = styled.div`
@@ -64,6 +75,9 @@ export const StyledWatchImages = styled.div`
    overflow: hidden;
    position: relative;
    background: yellow;
+   @media (max-width: 750px) {
+      flex: 10;
+   }
 `;
 
 export const StyledNumberOfProduct = styled.h1`
@@ -74,4 +88,7 @@ export const StyledNumberOfProduct = styled.h1`
    margin: auto;
    color: ${({ theme }) => theme.colors.grey.light};
    opacity: 0.25;
+   @media (max-width: 750px) {
+      display: none;
+   }
 `;

@@ -15,6 +15,9 @@ export const StyledLogoWrapper = styled.div`
       width: 100%;
       height: 100%;
    }
+   @media (max-width: 750px) {
+      display: none;
+   }
 `;
 
 export const StyledMenuWrapper = styled.div`

@@ -38,7 +38,7 @@ const OrderSummary = () => {
             <StyledFormWrapper empty={isShoppingCartEmpty ? true : false}>
                {isShoppingCartEmpty ? (
                   <StyledEmptyShoppingCartMessage>
-                     EMPTY SHOPPING CART :(
+                     EMPTY SHOPPING CART
                   </StyledEmptyShoppingCartMessage>
                ) : (
                   <OrderForm

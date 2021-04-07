@@ -5,6 +5,9 @@ export const StyledLandingWrapper = styled.div`
    height: 85vh;
    display: flex;
    flex-direction: row;
+   @media (max-width: 750px) {
+      flex-direction: column;
+   }
 `;
 
 export const StyledSloganWrapper = styled.div`
@@ -25,6 +28,11 @@ export const StyledTitleWrapper = styled.div`
       text-transform: uppercase;
       font-size: 4vw;
       border-bottom: 5px solid ${({ theme }) => theme.colors.red.normal};
+      @media (max-width: 750px) {
+         width: 100%;
+         font-size: 10vw;
+         line-height: 15vw;
+      }
    }
 `;
 

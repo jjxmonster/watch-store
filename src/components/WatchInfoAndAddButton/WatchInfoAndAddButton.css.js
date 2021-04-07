@@ -7,6 +7,9 @@ export const StyledInformationWrapper = styled.div`
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
    grid-template-rows: 1fr 20px 1fr 0.5fr 1fr 65px;
+   @media (max-width: 750px) {
+      grid-template-rows: 1fr 0px 1fr 0.5fr 1fr 50px;
+   }
 `;
 
 export const StyledAmountInput = styled.div`
@@ -16,6 +19,9 @@ export const StyledAmountInput = styled.div`
    grid-row-start: 6;
    grid-row-end: 6;
    margin-left: 20px;
+   @media (max-width: 750px) {
+      grid-column-end: 5;
+   }
    > .amount {
       position: absolute;
       left: 0;
@@ -68,6 +74,9 @@ export const StyledProductName = styled.h2`
    justify-content: flex-start;
    font-size: 4vh;
    color: #fffafa;
+   @media (max-width: 750px) {
+      font-size: 3vh;
+   }
 `;
 
 export const StyledProductDesciption = styled.p`
@@ -77,6 +86,9 @@ export const StyledProductDesciption = styled.p`
    grid-row-end: 3;
    display: flex;
    color: ${({ theme }) => theme.colors.white.normal};
+   @media (max-width: 750px) {
+      display: none;
+   }
 `;
 
 export const StyledProductPrice = styled.p`
@@ -89,6 +101,9 @@ export const StyledProductPrice = styled.p`
    justify-content: flex-start;
    font-size: 4vh;
    color: ${({ theme }) => theme.colors.white.normal};
+   @media (max-width: 750px) {
+      font-size: 3vh;
+   }
 `;
 
 export const StyledAddProductButton = styled.button`
