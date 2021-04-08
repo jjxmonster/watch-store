@@ -181,6 +181,7 @@ export const StyledEmptyCartWrapper = styled.div`
    justify-content: center;
    align-items: center;
    > h2 {
+      text-align:center;
       font-size: 3.5vh;
    }
    > a {
