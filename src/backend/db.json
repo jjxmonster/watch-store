@@ -39,22 +39,5 @@
       "totalCost": 495,
       "date": "8/4/2021 13:11:43",
       "id": 2
-   },
-   {
-      "name": "Jakub Tarabasz",
-      "email": "kuba.tarabasz@wp.pl",
-      "address": "Miròw Stary",
-      "items": [
-         {
-            "name": "TISSOT SEASTAR 1000 POWERMATIC 80",
-            "price": 695,
-            "amount": 1,
-            "totalPrice": 695,
-            "id": 3
-         }
-      ],
-      "totalCost": 695,
-      "date": "8/4/2021 13:15:17",
-      "id": 3
    }
 ]

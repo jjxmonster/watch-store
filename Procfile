@@ -1,1 +1,1 @@
-web: npm run start:db
+web: npm start
