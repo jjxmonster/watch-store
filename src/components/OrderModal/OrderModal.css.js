@@ -14,7 +14,7 @@ export const StyledModalWrapper = styled.div`
 `;
 
 export const StyledOrderModal = styled.div`
-   width: 25vw;
+   width: 80vw;
    height: 50vh;
    display: flex;
    flex-direction: column;
