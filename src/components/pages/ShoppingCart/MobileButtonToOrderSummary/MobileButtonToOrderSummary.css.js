@@ -8,4 +8,8 @@ export const StyledButtonToOrderSummary = styled.button`
    background: ${({ theme }) => theme.colors.red.normal};
    font-size: 2.7vh;
    font-weight: bold;
+   display: none;
+   @media (max-width: 750px) {
+      display: block;
+   }
 `;
