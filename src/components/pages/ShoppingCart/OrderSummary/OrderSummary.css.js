@@ -8,6 +8,13 @@ export const StyledOredSummaryWrapper = styled.div`
    align-items: center;
    flex-direction: column;
    position: relative;
+   transition: 0.5s ease;
+   @media (max-width: 750px) {
+      position: fixed;
+      width: 100%;
+      height: 80%;
+      margin-left: 100%;
+   }
 `;
 
 export const StyledOrderSummaryHeader = styled.div`

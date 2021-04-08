@@ -31,7 +31,7 @@ const OrderSummary = () => {
 
    return (
       <>
-         <StyledOredSummaryWrapper>
+         <StyledOredSummaryWrapper className='order-summary'>
             <StyledOrderSummaryHeader>
                <h2>Order Summary</h2>
             </StyledOrderSummaryHeader>

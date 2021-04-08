@@ -2,6 +2,7 @@ import React from 'react';
 
 import ShoppingCartItems from './ShoppingCartItems';
 import OrderSummary from './OrderSummary';
+import MobileButtonToOrderSummary from './MobileButtonToOrderSummary';
 
 import { StyledShoppingCartWrapper } from './ShoppingCart.css';
 
@@ -11,6 +12,7 @@ const ShoppingCart = () => {
          <StyledShoppingCartWrapper>
             <ShoppingCartItems />
             <OrderSummary />
+            <MobileButtonToOrderSummary />
          </StyledShoppingCartWrapper>
       </>
    );
