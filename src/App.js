@@ -51,7 +51,7 @@ function App() {
                      <Route path='/shopping-cart'>
                         <ShoppingCart />
                      </Route>
-                     <Route path='/orders'>
+                     <Route path='/all-orders'>
                         <React.Suspense fallback={<LoadingIndicator />}>
                            <OrdersPage />
                         </React.Suspense>

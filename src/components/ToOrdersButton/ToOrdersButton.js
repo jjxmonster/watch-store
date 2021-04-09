@@ -15,7 +15,7 @@ const ToOrderButton = () => {
             <Link
                className='toOrderButton'
                style={{ color: 'white' }}
-               to='/orders'
+               to='/all-orders'
             >
                ORDERS
             </Link>

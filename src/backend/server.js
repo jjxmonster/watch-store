@@ -5,12 +5,14 @@ const path = require('path');
 
 const { cacheControl } = require('./cacheControl');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, '../../', 'build')));
 
 app.listen(port, '127.0.0.1', () => {
    console.log('server is listening...');
@@ -19,6 +21,13 @@ app.listen(port, '127.0.0.1', () => {
 app.get('/orders', cacheControl, (req, res) => {
    res.set('Content-Type', 'text/json');
    res.sendFile(path.join(__dirname, 'db.json'));
+});
+
+app.get('/*', (req, res) => {
+   const fileName = path.join(__dirname, 'build', 'index.html');
+   res.sendFile(fileName, {
+      root: path.join(__dirname, 'build'),
+   });
 });
 
 app.post('/orders', cacheControl, (req, res) => {

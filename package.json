@@ -32,11 +32,11 @@
       "web-vitals": "^0.2.4"
    },
    "scripts": {
-      "start": "start npm run start-db && react-scripts start",
-      "build": "react-scripts build",
+      "start-client": "react-scripts start",
+      "build": "react-scripts build && (cd src && cd backend && npm install)",
       "test": "react-scripts test",
       "eject": "react-scripts eject",
-      "start-db": "cd src && cd backend && nodemon server.js"
+      "start": "cd src && cd backend && npm start"
    },
    "eslintConfig": {
       "extends": [

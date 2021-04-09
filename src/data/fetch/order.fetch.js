@@ -1,5 +1,5 @@
 export const addOrder = async data => {
-   const response = await fetch('http://localhost:3001/orders', {
+   const response = await fetch('http://localhost:3000/orders', {
       method: 'POST',
       headers: {
          'Content-type': 'application/json',
@@ -11,7 +11,7 @@ export const addOrder = async data => {
 };
 
 export const fetchAllOrders = async () => {
-   const response = await fetch('http://localhost:3001/orders').catch(err => {
+   const response = await fetch('http://localhost:3000/orders').catch(err => {
       console.log('ERROR');
    });
 
