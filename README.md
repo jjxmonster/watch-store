@@ -28,6 +28,16 @@ data in the form, order will be saved in json file due to custom backend with ex
 orders.
 </p>
 
+### Installing
+
+Clone the Repository and run
+
+```
+npm install
+npm run build
+npm start
+```
+
 ### Built With
 
 -  React
